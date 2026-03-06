@@ -1,0 +1,38 @@
+[
+  {
+    "role": "system",
+    "content": "Answer using only the provided document context."
+  },
+  {
+    "role": "user",
+    "content": "what is this pdf"
+  },
+  {
+    "role": "assistant",
+    "content": "I could not find this information in the document."
+  },
+  {
+    "role": "user",
+    "content": "the document is about??"
+  },
+  {
+    "role": "assistant",
+    "content": "The document is about summarization, specifically discussing self-attention mechanisms and their applications in tasks like abstractive summarization, reading comprehension, textual entailment, and sentence representation learning."
+  },
+  {
+    "role": "user",
+    "content": "his name"
+  },
+  {
+    "role": "assistant",
+    "content": "The name mentioned in the document is Jakob."
+  },
+  {
+    "role": "user",
+    "content": "explain attention mechanism"
+  },
+  {
+    "role": "assistant",
+    "content": "An attention function can be described as mapping a query and a set of key-value pairs to an output, where the query, keys, values, and output are all vectors."
+  }
+]

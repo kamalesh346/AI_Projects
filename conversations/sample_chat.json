@@ -1,0 +1,166 @@
+[
+  {
+    "role": "system",
+    "content": "Answer using only provided document context."
+  },
+  {
+    "role": "user",
+    "content": "candidate's project"
+  },
+  {
+    "role": "assistant",
+    "content": "The candidate's projects include:\n1. YouTube Homepage Clone\n2. L'Or\u00e9al Homepage Clone\n3. To-Do List App\n4. Booksy \u2013 Book Tracker App"
+  },
+  {
+    "role": "user",
+    "content": "bagaimana namanya? bagaimana namanya?"
+  },
+  {
+    "role": "assistant",
+    "content": "The candidate's project is the Transport Management System (TMS)."
+  },
+  {
+    "role": "user",
+    "content": "the name of the candidate."
+  },
+  {
+    "role": "assistant",
+    "content": "The name of the candidate is Kamalesh AP."
+  },
+  {
+    "role": "user",
+    "content": "candidate's education"
+  },
+  {
+    "role": "assistant",
+    "content": "The candidate's education includes:\n- BHARANI VIDHYALAYA, BIO - MATH, with a percentage of 91%, from June 2022 to March 2023.\n- BANNARI AMMAN INSTITUTE OF TECHNOLOGY, Electrical and Electronics Engineering, with a GPA of 8.55, from 2023 to 2027."
+  },
+  {
+    "role": "user",
+    "content": "\uc624\ub298\ub3c4 \uc2dc\uccad\ud574 \uc8fc\uc154\uc11c \uac10\uc0ac\ud569\ub2c8\ub2e4."
+  },
+  {
+    "role": "assistant",
+    "content": "I could not find this information in the document."
+  },
+  {
+    "role": "user",
+    "content": "please explain the project done by this candidate."
+  },
+  {
+    "role": "assistant",
+    "content": "The candidate's project, Transport Management System (TMS), is a role-based web application developed from scratch for Admins, Bookers, and Drivers. It features an Admin Panel for managing bookings, vehicles, drivers, and trip assignments. The booking module includes dynamic vehicle and driver availability checks. The system utilizes authentication with JWT, protected routes, and centralized state handling. Additionally, it provides real-time status updates, dashboard analytics, and error handling. The project stack includes React, Node.js, Express, Prisma, MySQL, and MUI."
+  },
+  {
+    "role": "user",
+    "content": "\u0baa\u0bc7\u0b9a\u0bbf\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bcd\u0b95\u0bca\u0ba3\u0bcd\u0b9f\u0bc1 \u0b87\u0bb0\u0bc1\u0b99\u0bcd\u0b95 \u0baa\u0bc7\u0b9a\u0bbf\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bcd\u0b95\u0bca\u0ba3\u0bcd\u0b9f\u0bc1 \u0b87\u0bb0\u0bc1\u0b99\u0bcd\u0b95 \u0bb8\u0bcd\u0b9f\u0bbe\u0bae\u0bcd \u0b95\u0bca\u0ba3\u0bcd\u0b9f \u0b85\u0b9f\u0bcd\u0b9f\u0bc8\u0b95\u0bcd\u0b95\u0bc1\u0bb3\u0bcd \u0b8f\u0ba4\u0bcb \u0ba4\u0bbe\u0b9a\u0bb8\u0bcd \u0baa\u0bc0\u0bb0\u0bcd \u0baa\u0bbf\u0b9f\u0bbf\u0baf\u0bc1\u0bae\u0bcd \u0baa\u0bcb\u0b9f\u0b9a\u0bcd \u0b9a\u0bca\u0ba9\u0bcd\u0ba9\u0bbe\u0bb0\u0bbe\u0bae\u0bcd"
+  },
+  {
+    "role": "assistant",
+    "content": "I could not find this information in the document."
+  },
+  {
+    "role": "user",
+    "content": "candidate's name"
+  },
+  {
+    "role": "assistant",
+    "content": "Kamalesh AP"
+  },
+  {
+    "role": "user",
+    "content": "it does that. it bothers me."
+  },
+  {
+    "role": "assistant",
+    "content": "Kamalesh AP"
+  },
+  {
+    "role": "user",
+    "content": "can you please tell me the name of the book? can you please tell me the name of the book?"
+  },
+  {
+    "role": "assistant",
+    "content": "The name of the book is not provided in the document."
+  },
+  {
+    "role": "user",
+    "content": "candidates, projects"
+  },
+  {
+    "role": "assistant",
+    "content": "The name of the book is not provided in the document."
+  },
+  {
+    "role": "user",
+    "content": "list the projects done by the candidate."
+  },
+  {
+    "role": "assistant",
+    "content": "The project done by the candidate is:\n- Transport Management System (TMS)"
+  },
+  {
+    "role": "user",
+    "content": "stop."
+  },
+  {
+    "role": "assistant",
+    "content": "The project done by the candidate is:\n- Transport Management System (TMS)"
+  },
+  {
+    "role": "user",
+    "content": "name?"
+  },
+  {
+    "role": "assistant",
+    "content": "The project done by the candidate is:\n- Transport Management System (TMS)"
+  },
+  {
+    "role": "user",
+    "content": "name of the candidate"
+  },
+  {
+    "role": "assistant",
+    "content": "The candidate's name is Kamalesh AP."
+  },
+  {
+    "role": "user",
+    "content": "name of the candidate"
+  },
+  {
+    "role": "assistant",
+    "content": "The candidate's name is Kamalesh AP."
+  },
+  {
+    "role": "user",
+    "content": "voice mode"
+  },
+  {
+    "role": "assistant",
+    "content": "The candidate's name is Kamalesh AP."
+  },
+  {
+    "role": "user",
+    "content": "name of the candidate?"
+  },
+  {
+    "role": "assistant",
+    "content": "The name of the candidate is Kamalesh AP."
+  },
+  {
+    "role": "user",
+    "content": "what is this pdf is about?"
+  },
+  {
+    "role": "assistant",
+    "content": "The PDF is about a profile of Kamalesh AP, an aspiring full-stack developer. It includes details about their education, skills, projects (such as a Transport Management System and mini projects like YouTube and L'Or\u00e9al homepage clones), volunteering experience, certifications, interests, and contact information."
+  },
+  {
+    "role": "user",
+    "content": "dzi\u0119kuje za ogl\u0105danie i do zobaczenia w kolejnych odcinkach!"
+  },
+  {
+    "role": "assistant",
+    "content": "I could not find this information in the document."
+  }
+]
