@@ -1,7 +1,15 @@
 __pycache__/
 *.pyc
 .env
+
 indexes/
 conversations/
+
 *.mp3
 *.wav
+
+.venv/
+env/
+rag_env/
+
+.ipynb_checkpoints/
