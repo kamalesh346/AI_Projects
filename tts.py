@@ -39,7 +39,7 @@ def audio_worker():
             break
 
         try:
-
+            # print("Speaking:", text)  # debug print
             response = client.audio.speech.create(
                 model="gpt-4o-mini-tts",
                 voice="alloy",
