@@ -1,14 +1,81 @@
+from openai import OpenAI
+import httpx
+import os
+from dotenv import load_dotenv
 from audio import record_audio, speech_to_text
 from rag import generate_answer_stream, load_or_create_index, load_conversation, save_conversation
 from pathlib import Path
 import time
-from tts import interrupt_speech
+from tts import interrupt_speech, speak
+import threading
+import random
+
+load_dotenv()
+
+templates = [
+    "I found relevant information for your query about {q}. According to the document, it appears on {p}.",
+    "Looking at the document, information related to {q} appears on {p}.",
+    "According to the document, the information about {q} is on {p}."
+]
+http_client = httpx.Client(
+    timeout=httpx.Timeout(60.0, read=30.0),
+    verify=False,
+    limits=httpx.Limits(max_connections=10)
+)
+
+client = OpenAI(
+    api_key=os.getenv("NAVIGATE_API_KEY"),
+    base_url="https://apidev.navigatelabsai.com/",
+    http_client=http_client
+)
 
 def retrieve_context(question, retriever):
     docs = retriever.invoke(question)
     context = "\n\n".join([doc.page_content for doc in docs])
-    return context
+    pages = []
+    for doc in docs:
+        if "page" in doc.metadata:
+            pages.append(doc.metadata["page"] + 1)
 
+    pages = sorted(list(set(pages)))
+    return context, pages
+
+def speak_grounding(question, pages):
+
+    rephrased_query = rephrase_query(question)
+
+    if not pages:
+        return
+
+    template = random.choice(templates)
+
+    if len(pages) == 1:
+        page_text = f"page {pages[0]}"
+    else:
+        page_text = f"pages {', '.join(map(str, pages))}"
+
+    message = template.format(q=rephrased_query, p=page_text)
+
+    speak(message)
+
+def rephrase_query(question):
+
+    prompt = f"""
+                Rephrase the user's query into a short clear phrase describing the information they want.
+
+                User query:
+                {question}
+
+                Return only the rephrased phrase.
+            """
+
+    response = client.chat.completions.create(
+        model="gpt-4.1-nano",
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=30
+    )
+
+    return response.choices[0].message.content.strip()
 
 def process_voice_input():
     audio_file = record_audio()
@@ -25,8 +92,13 @@ def answer_question(question, retriever, memory):
 
     start = time.time()
 
-    context = retrieve_context(question, retriever)
+    context, pages = retrieve_context(question, retriever)
 
+    threading.Thread(
+        target=speak_grounding,
+        args=(question, pages),
+        daemon=True
+    ).start()
     answer = generate_answer_stream(question, context, memory)
 
     end = time.time()

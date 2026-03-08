@@ -7,10 +7,10 @@ from openai import OpenAI
 import httpx
 import os
 from dotenv import load_dotenv
+import random
 
 load_dotenv()
 
-interrupt_requested = False
 http_client = httpx.Client(
     timeout=httpx.Timeout(60.0, read=30.0),
     verify=False,
@@ -31,15 +31,9 @@ speech_queue = queue.Queue()
 def audio_worker():
     """Continuously plays audio from queue"""
 
-    global interrupt_requested
-
     while True:
 
         text = speech_queue.get()
-
-        if interrupt_requested:
-            interrupt_requested = False
-            continue
 
         if text is None:
             break
@@ -69,22 +63,27 @@ def audio_worker():
 threading.Thread(target=audio_worker, daemon=True).start()
 
 def interrupt_speech():
-    global interrupt_requested
-
-    interrupt_requested = True
 
     # stop currently playing audio
     sd.stop()
     
     # clear queued speech
-    while not speech_queue.empty():
-        try:
+    try:
+        while True:
             speech_queue.get_nowait()
             speech_queue.task_done()
-        except queue.Empty:
-            break
+    except queue.Empty:
+        pass
+
+    responses = [
+        "Okay, stopping. What would you like to ask?",
+        "Sure, go ahead.",
+        "Alright, I'm listening.",
+        "Got it. What's now?"
+    ]
+
     # acknowledge interruption
-    speech_queue.put("Alright go ahead, what would you like to ask?")
+    speak(random.choice(responses))
 
 def speak(text):
     """Add speech to playback queue"""
