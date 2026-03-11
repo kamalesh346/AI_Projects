@@ -1,0 +1,15 @@
+sentence-transformers==2.7.0
+transformers==4.37.2
+tokenizers==0.15.2
+langchain
+langchain-huggingface
+langchain-community
+faiss-cpu
+sounddevice
+soundfile
+numpy
+pdf2image
+pytesseract
+openai
+python-dotenv
+httpx
